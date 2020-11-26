@@ -15,6 +15,7 @@ namespace Countries
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
+            
         }
 
         protected override async void OnInitialized()

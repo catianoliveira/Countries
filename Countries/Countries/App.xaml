@@ -15,15 +15,15 @@
 
             <!--  NavigationPage color  -->
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="Color.DarkOliveGreen"/>
-                <Setter Property="BarTextColor" Value="Color.White"/>
+                <Setter Property="BarBackgroundColor" Value="MidnightBlue"/>
+                <Setter Property="BarTextColor" Value="White"/>
             </Style>
 
             <!--  colors  -->
-            <Color x:Key="MainTextColor">#5F6574</Color>
-            <Color x:Key="SubTextColor">#B9BCC3</Color>
-            <Color x:Key="ButtonColor">#5ACB6E</Color>
-            <Color x:Key="PageColor">#FFFFF0</Color>
+            <Color x:Key="MainTextColor">Black</Color>
+            <Color x:Key="SubTextColor">#BDBDBD</Color>
+            <Color x:Key="ButtonColor">#BBDEFB</Color>
+            <Color x:Key="PageColor">GhostWhite</Color>
 
             <!--  font families  -->
             <OnPlatform x:Key="BoldFont" x:TypeArguments="x:String">
@@ -42,21 +42,23 @@
                 <On Platform="iOS" Value="OpenSans-Light" />
             </OnPlatform>
 
+                <!-- Tweak the values above to set your borders however you prefer -->
+
             <!--  styles  -->
             <Style x:Key="MovieName" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
             </Style>
 
             <Style x:Key="Rating" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
-                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
             </Style>
             <Style x:Key="SubText" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
-                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontSize" Value="16" />
                 <Setter Property="TextColor" Value="{StaticResource SubTextColor}" />
             </Style>
             <Style x:Key="ButtonText" TargetType="Label">

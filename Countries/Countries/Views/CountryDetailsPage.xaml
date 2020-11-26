@@ -6,13 +6,26 @@
              xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="Countries.Views.CountryDetailsPage"
              BackgroundColor="{StaticResource PageColor}"
-             Title="{Binding Title}">
+             Title="Go back"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms">
 
 
-    <StackLayout Padding="5">
 
+
+
+    <StackLayout Padding="5" BackgroundColor="GhostWhite">
         <ScrollView>
             <StackLayout>
+                <ffSvg:SvgCachedImage Source="{Binding Country.Flag}" 
+                                        CacheDuration= "50"
+                                        Margin="5"
+                                        RetryCount= "3"
+                                        RetryDelay= "600"
+                                        WidthRequest="150"
+                                        HeightRequest="100" 
+                                        HorizontalOptions="Center" />
+
+
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -20,6 +33,59 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -42,124 +108,275 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <ffSvg:SvgCachedImage Grid.Column="0"
-                                                    Aspect="AspectFill"
-                                                    Source="{Binding Flag}" 
-                                                    CacheDuration= "50"
-                                                    Margin="5"
-                                                    RetryCount= "3"
-                                                    RetryDelay= "600"
-                                                    WidthRequest="200"/>
-                    <Label
-                        Grid.Row="0"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Nation:</Label>
-                    <Label Grid.Row="0"
-                           Grid.Column="1"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding Country.Name}"></Label>
+                    <Label Text="{Binding Country.Name}" TextColor="MidnightBlue" FontSize="18" 
+                                           FontAttributes="None" HorizontalTextAlignment="Center" CharacterSpacing="5"/>
+
+                    <border:SfBorder 
+                BorderColor="MidnightBlue"
+                BackgroundColor="GhostWhite" 
+                HorizontalOptions="FillAndExpand" 
+                BorderWidth="1"
+                CornerRadius="20"
+                    Grid.Row="0" 
+                    Margin="20, 40, 20, 20" 
+                    Padding="10,15,10,15" 
+                    VerticalOptions="StartAndExpand" >
 
 
-                    <Label
-                        Grid.Row="1"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Region:</Label>
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="{Binding Country.Region}"/>
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                                
+                                <StackLayout HorizontalOptions="EndAndExpand" Margin="0,0,0,15">
+                                    <Label Text="Capital" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Region" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Subregion" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Country.Capital}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Region}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Subregion}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <Label Text="Native Name" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Cioc" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Numeric Code" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="3" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Country.NativeName}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Cioc}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.NumericCode}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+
+                    </border:SfBorder>
+
+              
+                    <border:SfBorder 
+                BorderColor="MidnightBlue"
+                BackgroundColor="GhostWhite" 
+                HorizontalOptions="FillAndExpand" 
+                BorderWidth="1"
+                CornerRadius="20"
+                    Grid.Row="0" 
+                    Margin="20,170, 20, 20" 
+                    Padding="10,15,10,15" 
+                    VerticalOptions="StartAndExpand" >
 
 
-                    <Label
-                        Grid.Row="2"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Subregion:</Label>
-                    <Label Grid.Row="2"
-                           Grid.Column="1"
-                           Text="{Binding Country.Subregion}"/>
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                    <Label
-                        Grid.Row="3"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Population:</Label>
-                    <Label Grid.Row="3"
-                           Grid.Column="1"
-                           Text="{Binding Country.Population}"/>
+                            <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
 
-                    <Label
-                        Grid.Row="4"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Latitute:</Label>
-                    <Label Grid.Row="4"
-                           Grid.Column="1"
-                           Text="{Binding Country.Latlng[0]}"/>
+                                <StackLayout HorizontalOptions="EndAndExpand" Margin="0,0,0,15">
+                                    <Label Text="Latitude" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Longitude" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
 
-                    <Label
-                        Grid.Row="5"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Logitude:</Label>
-                    <Label Grid.Row="5"
-                           Grid.Column="1"
-                           Text="{Binding Country.Latlng[1]}"/>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Country.Latlng[0]}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Latlng[1]}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <Label Text="Area" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Population" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="3" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Country.Area}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Population}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+
+                    </border:SfBorder>
+                    <border:SfBorder 
+                BorderColor="MidnightBlue"
+                BackgroundColor="GhostWhite" 
+                HorizontalOptions="FillAndExpand" 
+                BorderWidth="1"
+                CornerRadius="20"
+                Grid.Row="1" 
+                Margin="20, 0, 20, 0" 
+                Padding="10,15,10,15" 
+                HeightRequest="100" 
+                VerticalOptions="StartAndExpand">
+                        <ScrollView>
+                            <StackLayout>
+                                <Label Text="Borders"
+                                        TextColor="MidnightBlue"
+                                       HorizontalTextAlignment="Center" CharacterSpacing="5"
+                                   FontSize="15"/>
+
+                                <ListView 
+                              IsEnabled="False"
+                              RowHeight="23"
+                              HorizontalOptions="Center"
+                              ItemsSource="{Binding Country.Borders}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Label Text="{Binding}" />
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+                    </border:SfBorder>
+
+                    <border:SfBorder 
+                BorderColor="MidnightBlue"
+                BackgroundColor="GhostWhite" 
+                HorizontalOptions="FillAndExpand" 
+                BorderWidth="1"
+                CornerRadius="20"
+                    Grid.Row="0" 
+                    Margin="20, 280, 20, 20" 
+                    Padding="10,15,10,15" 
+                    VerticalOptions="StartAndExpand" >
 
 
-                    <Label
-                        Grid.Row="6"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Demonym:</Label>
-                    <Label Grid.Row="6"
-                           Grid.Column="1"
-                           Text="{Binding Country.Demonym}"/>
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
+                            <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
 
-                    <Label
-                        Grid.Row="7"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Area:</Label>
-                    <Label Grid.Row="7"
-                           Grid.Column="1"
-                           Text="{Binding Country.Area}"/>
+                                <StackLayout HorizontalOptions="EndAndExpand" Margin="0,0,0,15">
+                                    <Label Text="Portuguese" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="German" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="French" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
 
+                                </StackLayout>
+                            </StackLayout>
 
-                    <Label
-                        Grid.Row="8"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        Gini:</Label>
-                    <Label Grid.Row="8"
-                           Grid.Column="1"
-                           Text="{Binding Country.Gini}"/>
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Country.Translations.Pt}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Translations.De}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Translations.Fr}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
 
-                    <Label
-                        Grid.Row="9"
-                           Grid.Column="0"
-                        HorizontalTextAlignment="End">
-                        NativeName:</Label>
-                    <Label Grid.Row="9"
-                           Grid.Column="1"
-                           HorizontalTextAlignment="End"
-                           Text="{Binding Country.NativeName}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <Label Text="Spanish" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Croatian" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Dutch" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="3" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Country.Translations.Es}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Translations.Hr}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.Translations.Nl}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </border:SfBorder>
+                    <border:SfBorder 
+                BorderColor="MidnightBlue"
+                BackgroundColor="GhostWhite" 
+                HorizontalOptions="FillAndExpand" 
+                BorderWidth="1"
+                CornerRadius="20"
+                Grid.Row="1" 
+                Margin="20, 160, 20, 0" 
+                Padding="10,15,10,15" 
+                HeightRequest="100" 
+                VerticalOptions="StartAndExpand">
+                        <ScrollView>
+                            <StackLayout>
+                                <Label Text="Timezones"
+                                        TextColor="MidnightBlue"
+                                       HorizontalTextAlignment="Center" CharacterSpacing="5"
+                                   FontSize="15"/>
 
-
-
-
-
-
+                                <ListView 
+                              IsEnabled="False"
+                              RowHeight="23"
+                              HorizontalOptions="Center"
+                              ItemsSource="{Binding Country.Timezones}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Label Text="{Binding}" />
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+                        </border:SfBorder>
                 </Grid>
+                <Button Text="Generate Document" Clicked="OnButtonClicked" HorizontalOptions="Center"/>
+
             </StackLayout>
         </ScrollView>
-        <Button BackgroundColor="Navy"
-                Command="{Binding AddToCartBinding}" 
-                CornerRadius="10"
-                TextColor="White"
-                VerticalOptions="EndAndExpand"
-                Text="Return to Nations List"/>
     </StackLayout>
-    </ContentPage>
+</ContentPage>

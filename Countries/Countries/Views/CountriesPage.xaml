@@ -9,10 +9,8 @@
              Title="{Binding Title}"
              xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms">
 
-    <AbsoluteLayout>
-
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="5">
-            <SearchBar Placeholder="{Binding Title}"
+            <SearchBar Placeholder="Search"
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Search}"/>
             <CollectionView ItemsSource="{Binding Countries}">
@@ -30,15 +28,16 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
-                            <ffSvg:SvgCachedImage Grid.Column="0"
-                                                    Aspect="AspectFill"
+                        <ffSvg:SvgCachedImage Grid.Column="0"
+                                                    Aspect="Fill"
                                                     Source="{Binding Flag}" 
                                                     CacheDuration= "50"
                                                     Margin="5"
                                                     RetryCount= "3"
                                                     RetryDelay= "600"
-                                                    WidthRequest="100"/>
-                            <StackLayout Grid.Column="1"
+                                                    WidthRequest="120"
+                                                    HeightRequest="80"/>
+                        <StackLayout Grid.Column="1"
                                      VerticalOptions="Center">
                                 <Label Text="{Binding Name}" 
                                    FontAttributes="Bold"
@@ -46,7 +45,6 @@
                                    LineBreakMode="TailTruncation" />
                                 <Label Text="{Binding Capital}"
                                    LineBreakMode="TailTruncation"
-                                   FontAttributes="Italic" 
                                    VerticalOptions="End" />
                             </StackLayout>
                             <Image Grid.Column="2" 
@@ -55,18 +53,18 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </StackLayout>
-        <busyindicator:SfBusyIndicator AnimationType="Gear" 
+
+        <busyindicator:SfBusyIndicator AnimationType="Ball" 
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
                 	                   AbsoluteLayout.LayoutFlags="All"
-                                       BackgroundColor="Peru"
+                                       BackgroundColor="GhostWhite"
                 	                   HorizontalOptions="Center"
-                	                   TextColor="Black"
+                	                   TextColor="MidnightBlue"
                 	                   IsBusy="{Binding IsRunning}"
                 	                   Title="Loading..."
                 	                   VerticalOptions="Center"
                 	                   ViewBoxWidth="80"
                 	                   ViewBoxHeight="80" />
-    </AbsoluteLayout>
+    </StackLayout>
 
 </ContentPage>

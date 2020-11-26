@@ -1,6 +1,4 @@
-﻿
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Countries.Views
 {
@@ -10,5 +8,6 @@ namespace Countries.Views
         {
             InitializeComponent();
         }
+
     }
 }

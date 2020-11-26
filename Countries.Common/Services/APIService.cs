@@ -9,6 +9,28 @@ namespace Countries.Common.Services
 {
     public class APIService : IAPIService
     {
+        public string CheckStringCountries(string property)
+        {
+            if (!string.IsNullOrEmpty(property))
+            {
+                return property;
+            }
+
+            return "N/A";
+        }
+
+        public List<string> CheckStringCountriesList(List<string> propertiesList)
+        {
+            if (propertiesList.Count == 0)
+            {
+                propertiesList.Add("N/A");
+
+                return propertiesList;
+            }
+
+            return propertiesList;
+        }
+
         public async Task<Response> GetCountries(string urlBase, string controller)
         {
             try
