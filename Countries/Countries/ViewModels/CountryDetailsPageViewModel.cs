@@ -5,7 +5,7 @@ namespace Countries.ViewModels
 {
     public class CountryDetailsPageViewModel : ViewModelBase
     {
-        private CountryResponse _nation;
+        private CountryResponse _country;
 
         public CountryDetailsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
@@ -14,10 +14,15 @@ namespace Countries.ViewModels
 
         public CountryResponse Country
         {
-            get => _nation;
-            set => SetProperty(ref _nation, value);
+            get => _country;
+            set => SetProperty(ref _country, value);
         }
 
+
+        /// <summary>
+        /// gets countrys details
+        /// </summary>
+        /// <param name="parameters"></param>
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);

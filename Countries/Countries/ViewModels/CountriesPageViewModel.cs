@@ -35,6 +35,10 @@ namespace Countries.ViewModels
             LoadCountriesAsync();
         }
 
+
+        /// <summary>
+        /// countries search
+        /// </summary>
         public DelegateCommand SearchCommand => _searchCommand ?? (_searchCommand = new DelegateCommand(ShowCountries));
 
         public string Search
@@ -60,12 +64,14 @@ namespace Countries.ViewModels
         }
 
 
-
+        /// <summary>
+        /// loads countries
+        /// </summary>
         private async void LoadCountriesAsync()
         {
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Connection to the server has failed", "Ok"); //Todo change this
+                await App.Current.MainPage.DisplayAlert("Error", "Connection to the server has failed", "Ok");
                 return;
             }
 
@@ -91,6 +97,10 @@ namespace Countries.ViewModels
 
         }
 
+
+        /// <summary>
+        /// gets every countre's info
+        /// </summary>
         private void ShowCountries()
         {
             if (string.IsNullOrEmpty(Search))

@@ -15,10 +15,13 @@ namespace Countries.ViewModels
             _navigationService = navigationService;
         }
 
+        
         public DelegateCommand SelectCountryCommand =>
             _selectCountryCommand ?? (_selectCountryCommand = new DelegateCommand(SelectCountryAsync));
 
-
+        /// <summary>
+        /// gets selected country
+        /// </summary>
         private async void SelectCountryAsync()
         {
             NavigationParameters parameters = new NavigationParameters

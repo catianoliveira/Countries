@@ -53,60 +53,6 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Label Text="{Binding Country.Name}" TextColor="MidnightBlue" FontSize="18" 
                                            FontAttributes="None" HorizontalTextAlignment="Center" CharacterSpacing="5"/>
@@ -132,7 +78,7 @@
                             </Grid.ColumnDefinitions>
 
                             <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
-                                
+
                                 <StackLayout HorizontalOptions="EndAndExpand" Margin="0,0,0,15">
                                     <Label Text="Capital" TextColor="#7D7D7D" FontSize="12" 
                                            FontAttributes="Italic" HorizontalTextAlignment="End"/>
@@ -157,21 +103,21 @@
                             </StackLayout>
                             <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
                                 <StackLayout HorizontalOptions="EndAndExpand">
-                                    <Label Text="Native Name" TextColor="#7D7D7D" FontSize="12" 
-                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
                                     <Label Text="Cioc" TextColor="#7D7D7D" FontSize="12" 
                                            FontAttributes="Italic" HorizontalTextAlignment="End"/>
                                     <Label Text="Numeric Code" TextColor="#7D7D7D" FontSize="12" 
+                                           FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                    <Label Text="Native Name" TextColor="#7D7D7D" FontSize="12" 
                                            FontAttributes="Italic" HorizontalTextAlignment="End"/>
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout Grid.Column="3" Orientation="Horizontal" Spacing="10" HorizontalOptions="StartAndExpand">
                                 <StackLayout HorizontalOptions="StartAndExpand">
-                                    <Label Text="{Binding Country.NativeName}" TextColor="#7D7D7D" 
-                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
                                     <Label Text="{Binding Country.Cioc}" TextColor="#7D7D7D" 
                                            FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
                                     <Label Text="{Binding Country.NumericCode}" TextColor="#7D7D7D" 
+                                           FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding Country.NativeName}" TextColor="#7D7D7D" 
                                            FontSize="12" FontAttributes="None" HorizontalTextAlignment="Start"/>
                                 </StackLayout>
                             </StackLayout>
@@ -179,7 +125,7 @@
 
                     </border:SfBorder>
 
-              
+
                     <border:SfBorder 
                 BorderColor="MidnightBlue"
                 BackgroundColor="GhostWhite" 
@@ -372,9 +318,12 @@
                                 </ListView>
                             </StackLayout>
                         </ScrollView>
-                        </border:SfBorder>
+                    </border:SfBorder>
+
                 </Grid>
-                <Button Text="Generate Document" Clicked="OnButtonClicked" HorizontalOptions="Center"/>
+                <Button Text="Generate PDF" Clicked="OnButtonClicked" HorizontalOptions="Center" 
+                        BorderColor="MidnightBlue" BackgroundColor="GhostWhite" CornerRadius="20"
+                            FontSize="Small" />
 
             </StackLayout>
         </ScrollView>

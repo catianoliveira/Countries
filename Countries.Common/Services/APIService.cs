@@ -9,6 +9,7 @@ namespace Countries.Common.Services
 {
     public class APIService : IAPIService
     {
+        
         public string CheckStringCountries(string property)
         {
             if (!string.IsNullOrEmpty(property))
@@ -19,6 +20,7 @@ namespace Countries.Common.Services
             return "N/A";
         }
 
+        
         public List<string> CheckStringCountriesList(List<string> propertiesList)
         {
             if (propertiesList.Count == 0)
@@ -31,60 +33,55 @@ namespace Countries.Common.Services
             return propertiesList;
         }
 
-        public async Task<Response> GetCountries(string urlBase, string controller)
-        {
-            try
-            {
-                // 1º -> create http to make the external connection
-                var client = new HttpClient();
+        //public async Task<Response> GetCountries(string urlBase, string controller)
+        //{
+        //    try
+        //    {
+        //        var client = new HttpClient();
 
-                // 2º -> where is the base address - API
-                client.BaseAddress = new Uri(urlBase);
+        //        client.BaseAddress = new Uri(urlBase);
 
-                // 3º -> where is the API controller
-                var response = await client.GetAsync(controller);
+        //        var response = await client.GetAsync(controller);
 
-                // 4º -> load the results in string format into the result variable/object
-                var result = await response.Content.ReadAsStringAsync();
+        //        var result = await response.Content.ReadAsStringAsync();
 
-                if (!response.IsSuccessStatusCode)
-                {
-                    return new Response
-                    {
-                        IsSuccess = false,
-                        Message = result,
-                    };
-                }
+        //        if (!response.IsSuccessStatusCode)
+        //        {
+        //            return new Response
+        //            {
+        //                IsSuccess = false,
+        //                Message = result,
+        //            };
+        //        }
 
 
-                var jsonSettings = new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore//Handle nulls coming from api
-                };
+        //        var jsonSettings = new JsonSerializerSettings
+        //        {
+        //            NullValueHandling = NullValueHandling.Ignore
+        //        };
 
-                var nations = JsonConvert.DeserializeObject<List<CountryResponse>>(result, jsonSettings);
+        //        var countries = JsonConvert.DeserializeObject<List<CountryResponse>>(result, jsonSettings);
 
-                //var countries = JsonConvert.DeserializeObject<List<CountryResponse>>(result, 
-                //    new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        //        return new Response
+        //        {
+        //            IsSuccess = true,
+        //            Result = countries
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
 
+        //        return new Response
+        //        {
+        //            IsSuccess = false,
+        //            Message = ex.Message
+        //        };
+        //    }
+        //}
 
-                return new Response
-                {
-                    IsSuccess = true,
-                    Result = nations
-                };
-            }
-            catch (Exception ex)
-            {
-
-                return new Response
-                {
-                    IsSuccess = false,
-                    Message = ex.Message
-                };
-            }
-        }
-
+        
+        
+        
         public async Task<Response> GetListAsync<T>(
         string urlBase,
         string servicePrefix,
@@ -100,7 +97,7 @@ namespace Countries.Common.Services
 
                 var jsonSettings = new JsonSerializerSettings
                 {
-                    NullValueHandling = NullValueHandling.Ignore//Handle nulls coming from api
+                    NullValueHandling = NullValueHandling.Ignore
                 };
 
 

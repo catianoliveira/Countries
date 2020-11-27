@@ -13,7 +13,8 @@
             <SearchBar Placeholder="Search"
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Search}"/>
-            <CollectionView ItemsSource="{Binding Countries}">
+        <CollectionView ItemsSource="{Binding Countries}">
+            
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
